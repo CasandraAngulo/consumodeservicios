@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    
+    <title>Consumo de servicios</title>
+  
+</head>
+<body>
+   
+    <body style="background-color:#ff7b00;">
+    </body>
+     
+    <h1>Consumo de Servicios API DOG</h1>
+    <div id="api"></div>
+    
+    <script>
+        
+          fetch('https://dog.ceo/api/breeds/image/random')
+          .then(response => response.json())
+          .then(data => {
+
+            const imageUrl = data.message;
+            const dogImage = document.createElement('img');
+           
+            dogImage.src = imageUrl;
+            dogImage.style.maxWidth = '400px';
+            dogImage.style.height = 'auto'; 
+            
+            document.getElementById('api').appendChild(dogImage);
+        })
+        .catch(error => {
+            console.error('Error al obtener la imagen del perrito:', error);
+            })
+            
+    </script>
+
+    <h1>Casandra Juliette Angulo Tolentino</h1>
+
+</body>
+</html>
